@@ -19,3 +19,16 @@ class Relationship(BaseModel):
 class KnowledgeGraph(BaseModel):
     nodes: List[Node] = Field(default_factory=list)
     relationships: List[Relationship] = Field(default_factory=list)
+
+class ExtractEntities(BaseModel):
+    entities:List[str]=Field(description="List of named entities from the query")
+
+class KHopDecision(BaseModel):
+    k: int = Field(
+        description="Number of hops to traverse. Must be 1, 2, or 3.",
+        ge=1,
+        le=3
+    )
+    reason: str = Field(
+        description="Why this k value was chosen"
+    )

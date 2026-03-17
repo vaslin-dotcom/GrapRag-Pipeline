@@ -10,5 +10,6 @@ GROQ_API_KEY   = os.getenv("GROQ_API_KEY")
 
 best_model="openai/gpt-oss-120b"
 fastest_model="moonshotai/kimi-k2-instruct-0905"
-GROQ_MODEL     =  fastest_model # 👈 change to your model
+thinking_model='qwen/qwen3-32b'
+GROQ_MODEL     =  thinking_model # 👈 change to your model
 GROQ_BASE_URL  = "https://api.groq.com/openai/v1"

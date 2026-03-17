@@ -7,3 +7,7 @@ langchain-core
 pydantic
 langchain
 langchain-text-splitters
+chromadb 
+sentence-transformers 
+langchain-huggingface 
+langchain-chroma
