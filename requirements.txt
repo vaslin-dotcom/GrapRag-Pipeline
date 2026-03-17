@@ -1,0 +1,9 @@
+neo4j
+pypdf
+python-dotenv
+langchain-openai
+langchain_community
+langchain-core
+pydantic
+langchain
+langchain-text-splitters
