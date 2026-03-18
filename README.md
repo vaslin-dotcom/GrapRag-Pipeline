@@ -286,7 +286,7 @@ print(answer)
 Below is a screenshot of the knowledge graph built from the Game of Thrones document, visualized in the Neo4j Browser.
 
 
-![Neo4j Knowledge Graph](./Screenshot 2026-03-18 144504.png)
+![Neo4j Knowledge Graph](Neo4j_DB_visuals.png)
 
 ---
 
