@@ -286,8 +286,7 @@ print(answer)
 Below is a screenshot of the knowledge graph built from the Game of Thrones document, visualized in the Neo4j Browser.
 
 <!-- 📸 INSERT NEO4J SCREENSHOT HERE -->
-> _Replace this section with your Neo4j Browser screenshot._
-> _To capture it: open Neo4j Browser → run `MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 100` → take a screenshot of the graph view._
+![Neo4j Knowledge Graph](./Screenshot 2026-03-18 144504.png)
 
 ---
 
