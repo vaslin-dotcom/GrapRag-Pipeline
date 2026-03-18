@@ -43,10 +43,7 @@ def format_graph_context(graph_results: list[dict]) -> str:
                 target   = rel['target']
 
                 # ── Mark direction clearly ─────────────────
-                if source == entity:
-                    formatted += f"\n    {source} --[{relation}]--> {target}  (outgoing)"
-                else:
-                    formatted += f"\n    {source} --[{relation}]--> {target}  (incoming — {source} does this TO/WITH {entity})"
+                formatted += f"\n    - {source} {relation} {target}"
 
         formatted += "\n"
 

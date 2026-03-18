@@ -25,7 +25,7 @@ def build_vector_store(chunks):
     )
 
 def load_vector_store():
-    print(f"Loading vector store from '{chroma_path}'")
+    print(f"Loading vector store from {chroma_path}")
     return Chroma(
         persist_directory=chroma_path,
         embedding_function=embeddings
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     # # ── Build ──────────────────────────────────────────────
     # build_vector_store(chunks)
 
-    # ── Test search ────────────────────────────────────────
+    #── Test search ────────────────────────────────────────
     test_queries = [
         "Who is Eddard Stark?",
         "What are the alliances of House Stark?",

@@ -3,6 +3,7 @@ from llm import get_llm
 from langchain_core.messages import HumanMessage,SystemMessage
 from prompts import *
 from neo4j import GraphDatabase
+from cypher import graph_extraction_cypher
 from config import NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD
 
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
@@ -65,23 +66,7 @@ def graph_retrieve_entity(entity: str, k: int = 1) -> dict | None:
 
         # ── Retrieve k-hop subgraph ────────────────────────
         result = session.run(
-            f"""
-            MATCH path = (n {{name: $name}})-[*1..{k}]-(m)
-            RETURN
-                n.name                      AS entity,
-                labels(n)                   AS types,
-                properties(n)               AS props,
-                collect(DISTINCT {{
-                    neighbor    : m.name,
-                    type        : labels(m)[0],
-                    hops        : length(path)
-                }})[..30]                   AS neighbors,
-                collect(DISTINCT {{
-                    source      : startNode(relationships(path)[-1]).name,
-                    target      : endNode(relationships(path)[-1]).name,
-                    relation    : type(relationships(path)[-1])
-                }})[..30]                   AS relationships
-            """,
+            graph_extraction_cypher.format(k=k),
             name=matched_name
         ).single()
 

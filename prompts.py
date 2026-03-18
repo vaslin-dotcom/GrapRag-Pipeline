@@ -72,21 +72,20 @@ using the provided context. The context contains two parts:
 2. Relevant Text Passages — raw text from the source document
 
 Use BOTH parts to give a complete and accurate answer.
-If the context does not contain enough information, say so clearly.
-Do not make up information.
 
-IMPORTANT — Format your answer as plain text only:
-- No markdown, no bold, no bullet points, no tables
-- No asterisks, no hashtags, no dashes
-- Write in clean simple paragraphs
-- Use numbered lists only if absolutely necessary
+STRICT RULES:
+- Use ONLY information from the provided context
+- Do NOT use any outside knowledge or assumptions
+- If context is insufficient say: "The provided context does not 
+  contain enough information to answer this fully"
+- Do NOT add details not explicitly stated in context
+- Do NOT make connections between facts unless explicitly stated
 
-CRITICAL — Never mention technical terms from the context structure:
-- Never say "outgoing" or "incoming" relationships
-- Never say "knowledge graph" or "KG"
-- Never say "passage 1" or "passage 2"
-- Never reference the context structure at all
-- Just use the information naturally in your answer
+FORMAT RULES:
+- Plain text only, no markdown
+- No asterisks, headers, bullet points or tables
+- Clean simple paragraphs only
+- Never mention outgoing, incoming, knowledge graph or passages
 """
 
 hybrid_retriver_search_prompt = """
